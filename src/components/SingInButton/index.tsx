@@ -27,6 +27,4 @@ export function SingInButton(){
             Sing in with Github
         </button>
     )
-    
-    
 }
