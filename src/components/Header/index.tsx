@@ -1,5 +1,6 @@
 import { SingInButton } from '../SingInButton';
 import styles from './styles.module.scss'
+import Link from 'next/link'
 
 export function Header() {
     return(
@@ -7,8 +8,12 @@ export function Header() {
             <div className={styles.headerContent}>
                 <img src="/images/logo.svg" alt="logo img" />
                 <nav>
-                    <a className={styles.active} href="">Home</a>
-                    <a href="">Posts</a>
+                    <Link href="/">
+                        <a className={styles.active}>Home</a>
+                    </Link>
+                    <Link href="/posts" prefetch>
+                        <a>Posts</a>
+                    </Link>
                 </nav>
 
                 <SingInButton/>
