@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     const { slug } = params
 
     // later
-    if (!session.activeSbuscription) {
+    if (!session?.activeSbuscription) {
         return {
             redirect: {
                 destination: '/',
