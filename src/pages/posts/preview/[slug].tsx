@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { useSession } from "next-auth/client"
 import Head from "next/head"
 import Link from "next/link"
@@ -55,10 +55,13 @@ export default function PostPreview({ post }: PostPreviewProps) {
 
 }
 
-export const getStaticPaths = () => {
+// o path diz quais caminhos você quer gerar durante o build fazendo assim uma geração estatica
+// o resto vai ser gerado dinamicamente
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [],
+        paths: [ ],
         fallback: 'blocking'
+        // true, false, 'blocking'
     }
 }
 
